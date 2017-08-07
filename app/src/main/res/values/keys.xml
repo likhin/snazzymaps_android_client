@@ -1,0 +1,18 @@
+<resources>
+
+    <!--
+        An API key for Google Maps Android API can be acquired at:
+        https://developers.google.com/maps/documentation/android-api/signup
+     -->
+    <string name="smp_google_maps_key" templateMergeStrategy="preserve" translatable="false">
+        AIzaSyB00MbCzQHfIwPQwErTySRRqCuoyuaP0HA
+    </string>
+
+    <!--
+        An API key for SnazzyMaps can be acquired at:
+        https://snazzymaps.com/account/developer
+     -->
+    <string name="smp_snazzy_key" templateMergeStrategy="preserve" translatable="false">
+        0eddddbc-aaaa-bbbb-cccc-dddd12345678
+    </string>
+</resources>
