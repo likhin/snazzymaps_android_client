@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- day theme -->
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <!-- day UI -->
+    <color name="colorStatusBar">#E0E0E0</color>
+    <color name="colorAppBar">#F5F5F5</color>
+    <color name="colorBack">#FAFAFA</color>
+    <color name="colorCard">#FFFFFF</color>
+
+    <!-- common colors -->
+    <color name="colorFab">#FAFAFA</color>
+    <color name="colorFabIcon">#3F51B5</color>
+    <color name="transparent">#00000000</color>
 </resources>

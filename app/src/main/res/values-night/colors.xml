@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- night theme -->
+    <color name="colorPrimary">#FFC107</color>
+    <color name="colorPrimaryDark">#FFA000</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!-- night UI -->
+    <color name="colorStatusBar">#000000</color>
+    <color name="colorAppBar">#212121</color>
+    <color name="colorBack">#303030</color>
+    <color name="colorCard">#424242</color>
+</resources>
