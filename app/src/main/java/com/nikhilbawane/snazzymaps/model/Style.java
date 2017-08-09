@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * Data model for styles
- *
+ * <p>
  * Created by Nikhil on 08-08-2017.
  */
 
@@ -161,7 +161,7 @@ public class Style {
                 + "\"createdOn\":\"" + url + "\""
                 + "\"tags\":\"" + tags.toString() + "\""
                 + "\"colors\":\"" + colors.toString() + "\""
-                +"}";
+                + "}";
     }
 
     public class CreatedBy {
@@ -193,7 +193,7 @@ public class Style {
             return "{"
                     + "\"name\":\"" + name + "\","
                     + "\"url\":\"" + url + "\""
-                    +"}";
+                    + "}";
         }
     }
 }

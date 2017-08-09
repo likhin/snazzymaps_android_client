@@ -9,7 +9,7 @@ import java.util.List;
  * Data model for pages
  * A page is returned by the SnazzyMaps API
  * Each page contains a number of styles
- *
+ * <p>
  * Created by Nikhil on 08-08-2017.
  */
 
@@ -41,14 +41,14 @@ public class Page {
     @Override
     public String toString() {
         String stylesH = "";
-        for(int i = 0; i < styles.size(); i++) {
+        for (int i = 0; i < styles.size(); i++) {
             stylesH += styles.get(0).toString();
-            if(i < styles.size() - 1) stylesH += ",";
+            if (i < styles.size() - 1) stylesH += ",";
         }
         return "\"styles\":{"
                 + "\"pagination\":\"" + pagination.toString() + "\","
                 + "\"styles\":[" + stylesH + "]"
-                +"}";
+                + "}";
     }
 
     public class Pagination {
@@ -104,7 +104,7 @@ public class Page {
                     + "\"pageSize\":\"" + pageSize + "\""
                     + "\"totalPages\":\"" + totalPages + "\""
                     + "\"totalItems\":\"" + totalItems + "\""
-                    +"}";
+                    + "}";
         }
     }
 }
