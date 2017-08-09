@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Snazzy Maps</string>
+    <string name="search">Search...</string>
+    <string name="pull_up">Pull up.</string>
 </resources>
