@@ -7,6 +7,7 @@ import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -41,6 +42,7 @@ public class CollapsibleMapsActivity extends AppCompatActivity
     @BindView(R.id.coordinator_layout) CoordinatorLayout coordinatorLayout;
     @BindView(R.id.app_bar) AppBarLayout appBarLayout;
     @BindView(R.id.collapsing_layout) CollapsingToolbarLayout collapsingToolbarLayout;
+    @BindView(R.id.toolbar_card) CardView toolbardCard;
     @BindView(R.id.toolbar) Toolbar toolbar;
     @BindView(R.id.styles_recycler) RecyclerView stylesRecycler;
     private SharedPreferences preferences;
@@ -70,10 +72,10 @@ public class CollapsibleMapsActivity extends AppCompatActivity
         // The offset is needed when status bar is translucent
         if (Util.isStatusBarTranslucent(this)) {
             Log.i("CollapsibleMaps", "statusbar is translucent.");
-            //CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) toolbar.getLayoutParams();
-            CollapsingToolbarLayout.LayoutParams params = (CollapsingToolbarLayout.LayoutParams) toolbar.getLayoutParams();
+            CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) toolbardCard.getLayoutParams();
+            //CollapsingToolbarLayout.LayoutParams params = (CollapsingToolbarLayout.LayoutParams) toolbar.getLayoutParams();
             params.topMargin = EIGHT_DP + statBarHeight;
-            toolbar.setLayoutParams(params);
+            toolbardCard.setLayoutParams(params);
         }
 
         new CollapsibleMapsPresenter(this, API_KEY);
