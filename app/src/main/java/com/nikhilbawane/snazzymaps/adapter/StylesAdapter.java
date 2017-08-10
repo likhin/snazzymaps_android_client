@@ -39,16 +39,10 @@ public class StylesAdapter extends RecyclerView.Adapter<StylesAdapter.StyleViewH
     @Override
     public void onBindViewHolder(StyleViewHolder holder, int position) {
         Style currentStyle = styles.get(position);
-        holder.id.setText(currentStyle.getId().toString());
         holder.name.setText(currentStyle.getName());
-        holder.description.setText(currentStyle.getDescription());
-        holder.url.setText(currentStyle.getUrl());
-        holder.imageUrl.setText(currentStyle.getImageUrl());
-        holder.json.setText("too long");
+        holder.createdBy.setText("by " + currentStyle.getCreatedBy().getName());
         holder.views.setText(currentStyle.getViews().toString());
         holder.favorites.setText(currentStyle.getFavorites().toString());
-        holder.createdBy.setText(currentStyle.getCreatedBy().getName());
-        holder.createdOn.setText(currentStyle.getCreatedOn());
         holder.tags.setText(currentStyle.getTags().toString());
         holder.colors.setText(currentStyle.getColors().toString());
     }
@@ -60,16 +54,10 @@ public class StylesAdapter extends RecyclerView.Adapter<StylesAdapter.StyleViewH
 
     class StyleViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.card) CardView cardView;
-        @BindView(R.id.idnum) TextView id;
         @BindView(R.id.name) TextView name;
-        @BindView(R.id.description) TextView description;
-        @BindView(R.id.url) TextView url;
-        @BindView(R.id.image_url) TextView imageUrl;
-        @BindView(R.id.json) TextView json;
         @BindView(R.id.views) TextView views;
         @BindView(R.id.favorites) TextView favorites;
         @BindView(R.id.created_by) TextView createdBy;
-        @BindView(R.id.created_on) TextView createdOn;
         @BindView(R.id.tags) TextView tags;
         @BindView(R.id.colors) TextView colors;
 
