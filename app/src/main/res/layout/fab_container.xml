@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fab_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_collapseMode="parallax">
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="@dimen/fab_margin"
+        android:tint="@color/colorFabIcon"
+        app:backgroundTint="@color/colorFab"
+        app:elevation="2dp"
+        app:fabSize="normal"
+        app:layout_anchorGravity="bottom|end"
+        app:srcCompat="@drawable/ic_location" />
+
+    <View
+        android:id="@+id/dummy"
+        android:layout_width="0dp"
+        android:layout_height="16dp"
+        app:layout_anchor="@id/fabLocation"
+        app:layout_anchorGravity="top|right|end" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabDayNight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|top"
+        android:layout_margin="@dimen/fab_margin"
+        android:tint="@color/colorFabIcon"
+        app:backgroundTint="@color/colorFab"
+        app:elevation="2dp"
+        app:fabSize="normal"
+        app:layout_anchor="@id/dummy"
+        app:layout_anchorGravity="top|right|end"
+        app:srcCompat="@drawable/ic_dn_sun" />
+
+</android.support.design.widget.CoordinatorLayout>
