@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/coordinator_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -13,20 +12,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/collapsing_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:contentScrim="@color/colorBack"
+            app:expandedTitleMarginEnd="124dp"
             app:expandedTitleMarginStart="78dp"
-            app:expandedTitleMarginEnd="124dp">
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
             <fragment
                 android:id="@+id/map"
                 android:name="com.nikhilbawane.snazzymaps.styledmap.StyledMapFragment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:layout_collapseMode="parallax" />
+
             <include layout="@layout/fab_container" />
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
@@ -34,10 +36,13 @@
     <include layout="@layout/toolbar_base" />
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" >
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
         <com.nikhilbawane.snazzymaps.util.view.CustomTextView
             android:id="@+id/pull_up"
             android:layout_width="match_parent"
@@ -45,12 +50,13 @@
             android:drawablePadding="@dimen/text_padding"
             android:drawableTint="?attr/colorControlNormal"
             android:gravity="center_vertical"
-            android:paddingStart="@dimen/text_padding"
             android:paddingEnd="@dimen/text_padding"
+            android:paddingStart="@dimen/text_padding"
             android:text="@string/pull_up"
             android:typeface="monospace"
             app:drawableLeftCompat="@drawable/ic_arrow_up"
             tools:ignore="UnusedAttribute" />
+
         <android.support.v7.widget.RecyclerView
             android:id="@+id/styles_recycler"
             android:layout_width="match_parent"

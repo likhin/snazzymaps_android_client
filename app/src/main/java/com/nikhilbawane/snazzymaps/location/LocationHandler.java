@@ -51,8 +51,8 @@ public class LocationHandler implements LocationSource, LocationListener {
         }
     }
 
-    public boolean moveMapToCurrentLocation() {
-
+    public boolean moveMapToCurrentLocation(GoogleMap googleMap) {
+        this.googleMap = googleMap;
         moveMapClicked = true;
 
         try {

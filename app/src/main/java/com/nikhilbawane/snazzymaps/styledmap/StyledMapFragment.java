@@ -45,4 +45,8 @@ public class StyledMapFragment extends SupportMapFragment implements OnMapReadyC
         mMap.getUiSettings().setMapToolbarEnabled(false);
         mMap.getUiSettings().setCompassEnabled(true);
     }
+
+    public GoogleMap getmMap() {
+        return mMap;
+    }
 }

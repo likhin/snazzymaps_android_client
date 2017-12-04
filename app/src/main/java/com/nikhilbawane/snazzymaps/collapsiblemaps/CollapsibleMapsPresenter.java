@@ -1,5 +1,6 @@
 package com.nikhilbawane.snazzymaps.collapsiblemaps;
 
+import android.annotation.SuppressLint;
 import android.support.annotation.NonNull;
 
 import com.google.gson.Gson;
@@ -27,6 +28,7 @@ public class CollapsibleMapsPresenter implements CollapsibleMapsContract.Present
 
     private String apiKey;
 
+    @SuppressLint("RestrictedApi")
     CollapsibleMapsPresenter(@NonNull CollapsibleMapsContract.View collapsibleMapsView, String apiKey) {
         this.collapsibleMapsView = checkNotNull(collapsibleMapsView, "collapsibleMapsView cannot be null");
         this.apiKey = apiKey;

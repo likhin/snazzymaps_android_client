@@ -15,6 +15,14 @@ public interface CollapsibleMapsContract {
     interface View extends BaseView<Presenter> {
 
         void initializeRecyclerViewAdapter(List<Style> styles);
+//
+//        String getStyleSearchText();
+//
+//        String getFilterSort();
+//
+//        String getFilterTag();
+//
+//        String getFilterColor();
 
     }
 

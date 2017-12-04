@@ -1,5 +1,6 @@
 package com.nikhilbawane.snazzymaps.collapsiblemaps;
 
+import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
 import android.graphics.Point;
 import android.os.Bundle;
@@ -18,11 +19,13 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.nikhilbawane.snazzymaps.R;
 import com.nikhilbawane.snazzymaps.adapter.StylesAdapter;
 import com.nikhilbawane.snazzymaps.location.LocationHandler;
+import com.nikhilbawane.snazzymaps.styledmap.StyledMapFragment;
 import com.nikhilbawane.snazzymaps.util.Util;
 
 import java.util.List;
@@ -51,7 +54,7 @@ public class CollapsibleMapsActivity extends AppCompatActivity
     @BindView(R.id.coordinator_layout) CoordinatorLayout coordinatorLayout;
     @BindView(R.id.app_bar) AppBarLayout appBarLayout;
     @BindView(R.id.collapsing_layout) CollapsingToolbarLayout collapsingToolbarLayout;
-    @BindView(R.id.toolbar_card) CardView toolbardCard;
+    @BindView(R.id.toolbar_card) CardView toolbarCard;
     @BindView(R.id.toolbar) Toolbar toolbar;
     @BindView(R.id.pull_up) TextView pullUp;
     @BindView(R.id.styles_recycler) RecyclerView stylesRecycler;
@@ -88,7 +91,7 @@ public class CollapsibleMapsActivity extends AppCompatActivity
         stylesRecycler.setPadding(0, (2*EIGHT_DP) + statBarHeight, 0, navBarHeight);
 
         setSupportActionBar(toolbar);
-        coordinatorLayout.bringChildToFront(toolbardCard);
+        coordinatorLayout.bringChildToFront(toolbarCard);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayShowTitleEnabled(false);
             getSupportActionBar().setCustomView(R.layout.toolbar_map);
@@ -99,10 +102,10 @@ public class CollapsibleMapsActivity extends AppCompatActivity
         // The offset is needed when status bar is translucent
         if (Util.isStatusBarTranslucent(this)) {
             Log.i("CollapsibleMaps", "statusbar is translucent.");
-            CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) toolbardCard.getLayoutParams();
+            CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) toolbarCard.getLayoutParams();
             //CollapsingToolbarLayout.LayoutParams params = (CollapsingToolbarLayout.LayoutParams) toolbar.getLayoutParams();
             params.topMargin = EIGHT_DP + statBarHeight;
-            toolbardCard.setLayoutParams(params);
+            toolbarCard.setLayoutParams(params);
         }
 
         // Hide the "Pull up" handle when dragged up
@@ -153,7 +156,9 @@ public class CollapsibleMapsActivity extends AppCompatActivity
 
     @OnClick(R.id.fabLocation)
     public void onClickLocationFab() {
-        if (!locationHandler.checkAndRequestLocationPermission()) {
+        if (!locationHandler.moveMapToCurrentLocation(
+                ((StyledMapFragment)getSupportFragmentManager().findFragmentById(R.id.map)).getmMap()
+        )) {
             Snackbar.make(fabLocation, "Location permission required.", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show();
         }
@@ -181,6 +186,7 @@ public class CollapsibleMapsActivity extends AppCompatActivity
         fabDayNight.setImageResource(R.drawable.ic_dn_moon);
     }
 
+    @SuppressLint("RestrictedApi")
     @Override
     public void setPresenter(CollapsibleMapsContract.Presenter presenter) {
         collapsibleMapsPresenter = checkNotNull(presenter);
